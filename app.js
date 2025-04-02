@@ -1,4 +1,4 @@
-const firebaseURL = 'https://your-project-id.firebaseio.com'; // Replace with your Firebase project URL
+const firebaseURL = 'https://kaves-5ee65-default-rtdb.europe-west1.firebasedatabase.app/'; // Replace with your Firebase project URL
 
 const brewingOptions = [
   'Ristretto', 'Espresso', 'Double Espresso', 'Lungo/Americano',

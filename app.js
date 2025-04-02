@@ -6,7 +6,7 @@ const brewingOptions = [
   'Turkish coffee', 'Filtered coffee', 'Instant coffee'
 ];
 
-const fairTradeOptions = ['Definitely yes', 'Rather yes', 'Rather not', 'Definitely not', 'I don't know'];
+const fairTradeOptions = ['Definitely yes', 'Rather yes', 'Rather not', 'Definitely not', 'I dont know'];
 
 const priceOptions = [
   '< 5%', '5% (+2 CZK)', '10% (+4.5 CZK)', '15% (+7 CZK)',

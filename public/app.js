@@ -78,10 +78,9 @@ async function submitOrder() {
     updateCart();
     document.getElementById('addressForm').style.display = 'none';
     document.getElementById('address').value = '';
-    loadProducts(); // obnov produkty s novým stavem zásob
+    loadProducts();
   } else {
     alert('Chyba při odesílání objednávky: ' + (data.error || 'Neznámá chyba'));
   }
 }
-
 loadProducts();

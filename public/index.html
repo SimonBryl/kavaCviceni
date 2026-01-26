@@ -1,29 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <title>Online Store</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judo Vlašim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-light d-flex justify-content-center align-items-start py-5">
+<body>
 
-  <div class="container" style="max-width: 600px;">
-    <h1 class="text-center mb-4">Product List</h1>
-    <div id="products" class="mb-4 border p-3 rounded bg-white shadow-sm"></div>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-medal"></i> JUDO VLAŠIM
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#domu">Domů</a></li>
+                <li><a href="#onas">O nás</a></li>
+                <li><a href="#treneri">Trenéři</a></li>
+                <li><a href="#rozvrh">Rozvrh</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <a href="#nabor" class="btn btn-primary">Nábor / Přihláška</a>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
 
-    <h2 class="text-center mt-4">Cart</h2>
-    <div id="cart" class="mb-3 border p-3 rounded bg-white shadow-sm"></div>
+    <section class="hero" id="domu">
+        <div class="hero-content">
+            <div style="margin-bottom: 15px; display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">
+                <i class="fa-solid fa-check"></i> Tradice • Respekt • Dokonalost
+            </div>
+            <h1>Judo Vlašim:<br>Více než jen sport</h1>
+            <p>Rozvíjejte charakter, sílu a sebedůvěru vašich dětí prostřednictvím tréninkových metod založených na disciplíně a respektu.</p>
+            <div class="hero-buttons">
+                <a href="#rozvrh" class="btn btn-primary">Zobrazit Rozvrh</a>
+                <a href="#kontakt" class="btn btn-secondary">Kontaktujte Nás</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2070&auto=format&fit=crop" alt="Judo trénink">
+            
+            <div style="position: absolute; bottom: 30px; left: -20px; background: white; padding: 15px 25px; border-radius: 12px; color: black; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                <h3 style="color: var(--primary-red); font-size: 1.8rem;">15+</h3>
+                <span style="font-size: 0.85rem; font-weight: 600;">Let zkušeností</span>
+            </div>
+        </div>
 
-    <button onclick="checkout()" class="btn btn-primary w-100 mb-4">Order</button>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
 
-    <div id="addressForm" style="display:none;">
-      <div class="mb-3">
-        <input id="address" class="form-control" placeholder="Enter your address">
-      </div>
-      <button onclick="submitOrder()" class="btn btn-success w-100">Submit Order</button>
+    <section id="onas">
+        <div class="section-header">
+            <h2>Proč <span class="highlight">Judo Vlašim?</span></h2>
+            <p>Jsme více než sportovní klub. Jsme komunita, která buduje charaktery.</p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>Respekt</h3>
+                <p>Učíme děti respektovat sebe sama, ostatní a tradice bojového umění. Respekt je základem našeho tréninku.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon-box"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3>Síla & Kondice</h3>
+                <p>Rozvíjíme fyzickou sílu, koordinaci a vytrvalost. Každý trénink je krok k lepší kondici.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                <h3>Komunita</h3>
+                <p>Staňte se součástí přátelské rodiny judistů. Podporujeme růst každého člena v bezpečném prostředí.</p>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <div class="history-text">
+                <h3>Naše Historie</h3>
+                <br>
+                <p>Judo Vlašim má dlouholetou tradici v rozvoji mladých judistů ve městě Vlašim a okolí. Náš klub byl založen s vizí přinést japonské bojové umění do srdce naší komunity.</p>
+                <br>
+                <p>Za více než 15 let existence jsme vychovali stovky studentů, kteří si osvojili nejen techniky juda, ale také životní hodnoty.</p>
+            </div>
+            <div class="history-img">
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop" alt="Historie juda">
+            </div>
+        </div>
+    </section>
+
+    <section id="treneri" style="background-color: #f1f5f9;">
+        <div class="section-header">
+            <h2>Naši <span class="highlight">Trenéři</span></h2>
+            <p>Zkušení a certifikovaní trenéři, kteří vás provedou cestou juda.</p>
+        </div>
+
+        <div class="coaches-grid">
+            <div class="coach-card">
+                <div class="coach-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop" alt="Jan Novák">
+                    <div class="rank-badge">2. DAN</div>
+                </div>
+                <div class="coach-info">
+                    <h3>Jan Novák</h3>
+                    <span class="coach-role">Hlavní trenér</span>
+                    <p class="coach-desc">Více než 15 let zkušeností s tréninkem dětí i dospělých. Specialista na tradiční techniky.</p>
+                </div>
+            </div>
+
+            <div class="coach-card">
+                <div class="coach-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1972&auto=format&fit=crop" alt="Petra Svobodová">
+                    <div class="rank-badge">1. DAN</div>
+                </div>
+                <div class="coach-info">
+                    <h3>Petra Svobodová</h3>
+                    <span class="coach-role">Trenérka mládeže</span>
+                    <p class="coach-desc">Zaměřuje se na rozvoj dětí a začátečníků s důrazem na bezpečnost a správnou techniku.</p>
+                </div>
+            </div>
+
+            <div class="coach-card">
+                <div class="coach-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1583454155184-870a1f63aebc?q=80&w=1974&auto=format&fit=crop" alt="Martin Dvořák">
+                    <div class="rank-badge">3. KYU</div>
+                </div>
+                <div class="coach-info">
+                    <h3>Martin Dvořák</h3>
+                    <span class="coach-role">Asistent trenéra</span>
+                    <p class="coach-desc">Mladý a perspektivní judista s vášní pro sport a výuku nové generace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rozvrh">
+        <div class="section-header">
+            <h2>Rozvrh <span class="highlight">Tréninků</span></h2>
+            <p>Pravidelné tréninky pro všechny věkové kategorie.</p>
+        </div>
+
+        <div class="schedule-container">
+            <div class="day-column">
+                <div class="day-header">
+                    <h3>Pondělí & Středa</h3>
+                    <i class="fa-regular fa-calendar-days" style="font-size: 1.5rem; color: var(--primary-blue);"></i>
+                </div>
+
+                <div class="slot">
+                    <div class="time">16:00 <span>17:00</span></div>
+                    <div class="class-info">
+                        <h4>Přípravka (5-7 let)</h4>
+                        <p>Základy juda, koordinace, hry</p>
+                    </div>
+                </div>
+
+                <div class="slot">
+                    <div class="time">17:15 <span>18:30</span></div>
+                    <div class="class-info">
+                        <h4>Žáci (8-14 let)</h4>
+                        <p>Techniky, randori, příprava na soutěže</p>
+                    </div>
+                </div>
+
+                <div class="slot">
+                    <div class="time">18:45 <span>20:00</span></div>
+                    <div class="class-info">
+                        <h4>Dorost & Dospělí (15+ let)</h4>
+                        <p>Pokročilé techniky, kondice, sparring</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-column">
+                <div class="day-header">
+                    <h3>Úterý & Čtvrtek</h3>
+                    <i class="fa-regular fa-calendar-check" style="font-size: 1.5rem; color: var(--primary-blue);"></i>
+                </div>
+
+                <div class="slot">
+                    <div class="time">16:30 <span>17:30</span></div>
+                    <div class="class-info">
+                        <h4>Mladší žáci (6-10 let)</h4>
+                        <p>Nácvik pádů, základní chvaty</p>
+                    </div>
+                </div>
+
+                <div class="slot">
+                    <div class="time">17:45 <span>19:00</span></div>
+                    <div class="class-info">
+                        <h4>Starší žáci (11-15 let)</h4>
+                        <p>Pokročilé techniky, závodní příprava</p>
+                    </div>
+                </div>
+
+                <div class="slot">
+                    <div class="time">19:15 <span>20:30</span></div>
+                    <div class="class-info">
+                        <h4>Dospělí - Začátečníci</h4>
+                        <p>Úvod do juda, sebeobrana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <h2>První lekce zdarma!</h2>
+        <p>Přijďte vyzkoušet trénink bez závazků. Stačí se dostavit 15 minut před začátkem tréninku.</p>
+        <div style="display: flex; justify-content: center; gap: 15px;">
+            <a href="#rozvrh" class="btn btn-primary">Kompletní rozvrh</a>
+            <a href="#kontakt" class="btn btn-secondary">Přihlásit se nyní</a>
+        </div>
     </div>
-  </div>
 
-  <script src="app.js"></script>
+    <section id="kontakt">
+        <div class="section-header">
+            <h2>Kde <span class="highlight">Nás Najdete</span></h2>
+            <p>Navštivte nás v našem klubu nebo nás kontaktujte.</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h3>Adresa</h3>
+                        <p>Sportovní hala Vlašim<br>Náměstí 123<br>258 01 Vlašim</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h3>Telefon</h3>
+                        <p>+420 123 456 789<br><span style="font-size: 0.8rem; color: gray;">Po-Pá: 15:00 - 20:00</span></p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@judovlasim.cz<br><span style="font-size: 0.8rem; color: gray;">Odpovíme do 24 hodin</span></p>
+                    </div>
+                </div>
+                
+                <div style="background: #1e3a8a; color: white; padding: 25px; border-radius: 12px; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 15px;">Sledujte nás</h3>
+                    <div class="social-links" style="justify-content: center; display: flex;">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-frame">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20680.123456789!2d14.898!3d49.704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDQyJzE0LjQiTiAxNMKwNTMnNTIuOCJF!5e0!3m2!1scs!2scz!4v1600000000000!5m2!1scs!2scz" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <a href="#" class="footer-logo">JUDO VLAŠIM</a>
+                <p>Rozvíjíme charakter a sílu prostřednictvím tradičního japonského bojového umění.</p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Rychlé odkazy</h4>
+                <ul>
+                    <li><a href="#domu">Domů</a></li>
+                    <li><a href="#onas">O nás</a></li>
+                    <li><a href="#treneri">Trenéři</a></li>
+                    <li><a href="#rozvrh">Rozvrh</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Tréninkové časy</h4>
+                <ul>
+                    <li style="display: flex; justify-content: space-between;"><span>Po - Čt:</span> <span>16:00 - 20:30</span></li>
+                    <li style="display: flex; justify-content: space-between;"><span>Pátek:</span> <span>Uzavřeno</span></li>
+                    <li style="display: flex; justify-content: space-between;"><span>Víkendy:</span> <span>Turnaje</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Judo Vlašim. Všechna práva vyhrazena.
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>

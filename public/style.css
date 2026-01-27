@@ -417,21 +417,26 @@ footer {
 .copyright { text-align: center; font-size: 0.9rem; }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 992px) {
-    .hero { flex-direction: column; text-align: center; padding-top: 40px; }
-    .hero-content { margin-bottom: 40px; }
-    .hero-buttons { justify-content: center; }
-    .hero-image { width: 100%; }
-    
-    .history-section { flex-direction: column; }
-    .schedule-container { grid-template-columns: 1fr; }
-    .contact-wrapper { grid-template-columns: 1fr; }
-}
-
 @media (max-width: 768px) {
-    nav ul { display: none; } /* Zjednodušení pro demo - skryté menu */
+    nav ul { display: none; } 
     .mobile-menu-btn { display: block; }
     
     .hero h1 { font-size: 2.5rem; }
     .cta-banner { padding: 40px 20px; }
+
+    /* PŘIDEJ TOTO - Úprava tlačítka v hlavičce pro mobily */
+    header .btn {
+        padding: 8px 12px;      /* Zmenšeno z 12px 24px -> tlačítko bude užší */
+        font-size: 0.85rem;     /* Menší písmo */
+        line-height: 1.2;       /* Aby řádky u sebe byly blíže */
+        margin-right: 10px;     /* Malý odstup od ikony menu */
+    }
+    
+    /* Pokud chceš, aby se logo také trochu zmenšilo a udělalo místo */
+    .logo {
+        font-size: 1.2rem;
+    }
+    .logo img {
+        height: 30px;
+    }
 }

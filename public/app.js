@@ -22,4 +22,22 @@ menuBtn.addEventListener('click', () => {
         nav.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
     }
 });
+/* --- SLIDESHOW (PROLÍNÁNÍ FOTEK) --- */
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
 
+function nextSlide() {
+    // 1. Odebereme třídu 'active' aktuální fotce (začne mizet)
+    slides[currentSlide].classList.remove('active');
+
+    // 2. Vypočítáme index další fotky (pokud jsme na konci, vrátí se na 0)
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    // 3. Přidáme třídu 'active' nové fotce (začne se objevovat)
+    slides[currentSlide].classList.add('active');
+}
+
+// Spustit interval každých 4000 milisekund (4 sekundy)
+if (slides.length > 0) {
+    setInterval(nextSlide, 8000);
+}

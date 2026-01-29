@@ -39,5 +39,5 @@ function nextSlide() {
 
 // Spustit interval každých 4000 milisekund (4 sekundy)
 if (slides.length > 0) {
-    setInterval(nextSlide, 8000);
+    setInterval(nextSlide, 4000);
 }

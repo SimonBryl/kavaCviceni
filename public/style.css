@@ -1,8 +1,8 @@
 /* --- ZÁKLADNÍ NASTAVENÍ (VARIABLES) --- */
 :root {
-    --primary-blue: #1e3a8a; /* Tmavě modrá z obrázku */
-    --primary-red: #dc2626;  /* Červená tlačítka */
-    --bg-light: #f8fafc;     /* Světlé pozadí sekcí */
+    --primary-blue: #1e3a8a;
+    --primary-red: #dc2626;
+    --bg-light: #f8fafc;
     --text-dark: #1e293b;
     --text-gray: #64748b;
     --white: #ffffff;
@@ -43,6 +43,7 @@ ul { list-style: none; }
     font-weight: 600;
     transition: all 0.3s ease;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-primary {
@@ -86,7 +87,7 @@ header {
     align-items: center;
     gap: 10px;
 }
-.logo img { height: 40px; } /* Placeholder pro logo */
+.logo img { height: 40px; }
 
 nav ul {
     display: flex;
@@ -102,13 +103,13 @@ nav a {
 
 nav a:hover { color: var(--primary-red); }
 
-.mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
+.mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
 
 /* --- HERO SECTION --- */
 .hero {
     background: linear-gradient(135deg, var(--primary-blue) 0%, #172554 100%);
     color: var(--white);
-    padding: 80px 5% 150px 5%; /* Extra padding dole kvůli vlnce */
+    padding: 80px 5% 150px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -143,13 +144,13 @@ nav a:hover { color: var(--primary-red); }
     width: 50%;
     max-width: 600px;
     z-index: 2;
+    position: relative;
 }
 
 .hero-image img {
     width: 100%;
     border-radius: var(--radius);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-    /* Otočení obrázku mírně pro dynamiku */
     transform: rotate(-2deg); 
 }
 
@@ -234,14 +235,14 @@ section {
     display: flex;
     gap: 50px;
     align-items: center;
-    background: #eef2ff; /* Jemná modrá */
+    background: #eef2ff;
     border-radius: 20px;
     padding: 50px;
     margin-top: 50px;
 }
 .history-text { flex: 1; }
 .history-img { flex: 1; }
-.history-img img { width: 100%; border-radius: var(--radius); }
+.history-img img { width: 100%; border-radius: var(--radius); object-fit: cover; }
 
 /* --- COACHES (TRENÉŘI) --- */
 .coaches-grid {
@@ -416,27 +417,53 @@ footer {
 
 .copyright { text-align: center; font-size: 0.9rem; }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE FIXES (MOBIL) --- */
+@media (max-width: 992px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+    .hero-content { margin-bottom: 40px; }
+    .hero-buttons { justify-content: center; }
+    .hero-image { width: 100%; }
+}
+
 @media (max-width: 768px) {
-    nav ul { display: none; } 
+    /* 1. HEADER FIX: Menu pryč, tlačítko menší a odstup */
+    nav ul { display: none; }
     .mobile-menu-btn { display: block; }
     
-    .hero h1 { font-size: 2.5rem; }
-    .cta-banner { padding: 40px 20px; }
-
-    /* PŘIDEJ TOTO - Úprava tlačítka v hlavičce pro mobily */
     header .btn {
-        padding: 8px 12px;      /* Zmenšeno z 12px 24px -> tlačítko bude užší */
-        font-size: 0.85rem;     /* Menší písmo */
-        line-height: 1.2;       /* Aby řádky u sebe byly blíže */
-        margin-right: 10px;     /* Malý odstup od ikony menu */
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        margin-right: 15px; /* Odstup od hamburgeru */
     }
     
-    /* Pokud chceš, aby se logo také trochu zmenšilo a udělalo místo */
-    .logo {
-        font-size: 1.2rem;
+    /* 2. TEXTY A SEKCE */
+    .hero h1 { font-size: 2.5rem; }
+    .cta-banner { padding: 40px 20px; }
+    
+    /* 3. HISTORIE FIX: Pod sebe (sloupec) */
+    .history-section {
+        flex-direction: column; /* Pod sebe */
+        padding: 30px;
+        gap: 30px;
     }
-    .logo img {
-        height: 30px;
+    .history-text { width: 100%; }
+    .history-img { width: 100%; }
+
+    /* 4. ROZVRH FIX: Pod sebe */
+    .schedule-container {
+        grid-template-columns: 1fr; /* Vynucení jednoho sloupce */
+    }
+
+    /* 5. KONTAKT/MAPA FIX: Pod sebe a plná šířka */
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr; /* Pro jistotu reset gridu */
+    }
+    
+    .map-frame {
+        width: 100%;
+        height: 350px; /* Pevná výška, aby nebyla mapa "nudle" */
+        min-height: 300px;
     }
 }
